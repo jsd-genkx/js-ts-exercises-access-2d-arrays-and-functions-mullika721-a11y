@@ -8,20 +8,27 @@ const moves = [];
 
 // Start at A (0,0) -> [row][col]
 let row = 0;
-let col = 0; 
-moves.push(board[row][col]); // A
+let col = 0;
+moves.push(board[row][col]); // A //r0 c0 [0][0]
 
 // Move Right to B
 col++;
-moves.push(board[row][col]); // B
+moves.push(board[row][col]); // B //r0 c1 [0] [1]
 
-// Move Right to C
+// Move Right to C //r0 c3 [0] [3]
+col++;
+moves.push(board[row][col])
 
-// Move Down to F
+// Move Down to F //r1 c3 [1] [3]
+row++;
+moves.push(board[row][col])
 
-// Move left to E
+// Move left to E // r1 c1 [1] [1]
+col--;
+moves.push(board[row][col])
 
 console.log("Path:", moves.join(" → "));
 // Output: Path: A → B → C → F → E
+
 console.log("Total Moves (Start from 'A'):", moves.length - 1);
 // Output: Total Moves (Start from 'A'): 4
